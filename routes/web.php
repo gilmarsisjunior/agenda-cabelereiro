@@ -1,6 +1,12 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Pages\MenuController;
+use App\Http\Controllers\Pages\ViewLoginController;
+use App\Http\Controllers\Pages\ViewRegisterController;
+
+use App\Http\Controllers\User\LoginController;
+use App\Http\Controllers\User\UserRegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +19,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [MenuController::class, 'index'])->name('main.menu');
+Route::get('/login', [ViewLoginController::class, 'viewLogin'])->name('view.login');
+Route::post('/login', [LoginController::class, 'authenticate']);
+
+Route::get('/registro', [ViewRegisterController::class, 'viewRegister']);
+Route::post('/registro', [UserRegisterController::class, 'createNewUser']);

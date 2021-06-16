@@ -17,6 +17,7 @@ class CreateCustomersTable extends Migration
             $table->id();
             $table->foreignId('customer_id')->references('id')->on('users')->nullable();
             $table->string('horario');
+            $table->float('valor', 2);
             $table->timestamps();
         });
     }
