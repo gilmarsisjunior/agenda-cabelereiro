@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-use app\Models\Customer;
+use App\Models\Customer;
 
 class User extends Authenticatable
 {
@@ -44,7 +44,7 @@ class User extends Authenticatable
     ];
 
 
-    public function User()
+    public function Customer()
     {
       return  $this->hasMany(Customer::class);
     }

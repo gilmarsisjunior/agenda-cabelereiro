@@ -6,11 +6,13 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Pages\MenuController;
 use App\Http\Controllers\Pages\ViewLoginController;
 use App\Http\Controllers\Pages\ViewRegisterController;
+use App\Http\Controllers\Pages\ViewCustomerController;
 
 use App\Http\Controllers\UserConfig\LoginController;
 use App\Http\Controllers\UserConfig\UserRegisterController;
 
 use App\Http\Controllers\User\UserController;
+use App\Http\Controllers\Customer\CustomerController;
 
 /*
 |--------------------------------------------------------------------------
@@ -31,5 +33,8 @@ Route::post('/login', [LoginController::class, 'authenticate']);
 Route::get('/registro', [ViewRegisterController::class, 'viewRegister']);
 Route::post('/registro', [UserRegisterController::class, 'createNewUser']);
 
-Route::get('/home', [UserController::class, 'controlPanel']);
-Route::get('/agendar', [UserController::class, 'schedule'])->name('agendate');
+Route::get('/home', [UserController::class, 'controlPanel'])->middleware('auth');
+Route::get('/agendar', [UserController::class, 'schedule'])->middleware('auth')->name('agendate');
+
+Route::get('/criar',[ViewCustomerController::class, 'viewCustomer'])->middleware('auth')->name('customer');
+Route::post('/adicionar', [CustomerController::class, 'create'])->middleware('auth')->name('create');
