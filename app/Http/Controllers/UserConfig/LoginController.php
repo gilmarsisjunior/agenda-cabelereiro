@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\User;
+namespace App\Http\Controllers\UserConfig;
 
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
@@ -19,6 +19,6 @@ class LoginController extends Controller
             throw new Exception('Favor, confira suas credênciais');
             return 0;
         }
-        return redirect('/');
+        return redirect('/home');
     }
 }

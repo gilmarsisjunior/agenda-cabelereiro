@@ -11,4 +11,5 @@ class ViewRegisterController extends Controller
     {
         return view('pages.menus.register');
     }
+   
 }
