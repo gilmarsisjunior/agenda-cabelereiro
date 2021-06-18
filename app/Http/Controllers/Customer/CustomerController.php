@@ -21,13 +21,14 @@ class CustomerController extends Controller
     }
 
     public function create(Request $request)
-    {
+    {  
         $user =  auth()->user();
         Customer::create([
                           'customer_id'=>$user->id,
                           'nome'=>$request->name,
                           'valor'=> $request->price,
-                          'horario'=>$request->time,])->save();
+                          'horario'=>$request->time,
+                          'data'=> date('d-m-y'),])->save();
         return redirect('/lista'); 
 
     }

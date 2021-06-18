@@ -20,6 +20,7 @@ class Customer extends Model
         'customer_id',
         'valor',
         'horario',
+        'data',
     ];
 
     public function User()

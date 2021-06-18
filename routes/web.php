@@ -37,7 +37,7 @@ Route::get('/home', [UserController::class, 'controlPanel'])->middleware('auth')
 Route::get('/agendar', [UserController::class, 'schedule'])->middleware('auth')->name('agendate');
 
 Route::get('/criar',[ViewCustomerController::class, 'viewCustomer'])->middleware('auth')->name('customer');
-Route::post('/adicionar', [CustomerController::class, 'create'])->middleware('auth')->name('create');
+Route::post('/criar', [CustomerController::class, 'create'])->middleware('auth')->name('create');
 
 Route::get('/lista', [CustomerController::class, 'index'])->name('listar');
 Route::get('/delete{id}', [CustomerController::class, 'delete'])->name('delete');
