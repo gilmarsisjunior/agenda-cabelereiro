@@ -13,9 +13,9 @@ class CustomerController extends Controller
 {
 
     public function index()
-    {
+    {   
         $user =  auth()->user();
-        $customers = Customer::all()->where('customer_id', '=', $user->id);
+        $customers = Customer::all()->where('customer_id', '=', $user->id)->where('data','=', date('d-m-y'));
    
         return view('pages.user.clientes', compact('customers'));
     }

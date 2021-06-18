@@ -20,7 +20,7 @@ class CreateCustomersTable extends Migration
             $table->string('nome');
             $table->time('horario');
             $table->tinyInteger('valor');
-            $table->date('data');
+            $table->string('data');
             $table->timestamps();
         });
     }
