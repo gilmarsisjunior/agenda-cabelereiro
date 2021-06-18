@@ -24,6 +24,6 @@ class Customer extends Model
 
     public function User()
     {
-        $this->hasOne(User::class);
+        $this->belongsTo(User::class);
     }
 }

@@ -5,7 +5,8 @@ namespace App\Http\Controllers\Customer;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Customer;
-use Illuminate\Support\Facades\DB;
+
+
 
 
 class CustomerController extends Controller
@@ -14,15 +15,10 @@ class CustomerController extends Controller
     public function index()
     {
         $user =  auth()->user();
-        $customers = DB::table('customers')->where('customer_id','=', $user->id)
-            ->select('nome', 'valor')
-            ->get();
-
+        $customers = Customer::all()->where('customer_id', '=', $user->id);
+   
         return view('pages.user.clientes', compact('customers'));
     }
-
-
-
 
     public function create(Request $request)
     {
@@ -32,7 +28,15 @@ class CustomerController extends Controller
                           'nome'=>$request->name,
                           'valor'=> $request->price,
                           'horario'=>$request->time,])->save();
-        return redirect('/home'); 
+        return redirect('/lista'); 
 
+    }
+
+    public function delete($id)
+    {   
+        Customer::where('id','=',$id)->delete();
+
+        return back();
+        
     }
 }

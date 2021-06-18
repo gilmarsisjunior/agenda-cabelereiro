@@ -40,3 +40,4 @@ Route::get('/criar',[ViewCustomerController::class, 'viewCustomer'])->middleware
 Route::post('/adicionar', [CustomerController::class, 'create'])->middleware('auth')->name('create');
 
 Route::get('/lista', [CustomerController::class, 'index'])->name('listar');
+Route::get('/delete{id}', [CustomerController::class, 'delete'])->name('delete');

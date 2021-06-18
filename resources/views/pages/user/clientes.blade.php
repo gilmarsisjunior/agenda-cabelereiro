@@ -7,8 +7,24 @@
     <title>Document</title>
 </head>
 <body>
-    
-    <p>{{$customers}}</p>
+     
+    <table>
+        <tr>
+            <td>Nome</td>
+            <td>Preço. C</td>
+            <td>Hora</td>
+        </tr>
+        @foreach ($customers as $customer)
+            <tr>
+                <td>{{$customer->nome}}</td>
+                <td>{{$customer->valor}}</td>
+                <td>{{$customer->horario}}</td>
+                <td><a href="">Check</a></td>
+                <td><a href="">Edit</a></td>
+                <td><a href="{{route('delete', $customer->id)}}">Del</a></td>
+            </tr>
+        @endforeach
+    </table>
 
 </body>
 </html>
