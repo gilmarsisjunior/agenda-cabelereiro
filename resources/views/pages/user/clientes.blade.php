@@ -7,9 +7,8 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Essa é sua página de agendamento! {{$name}}</h1> <br/>
-    <a href="{{route('customer')}}"><h2>Cadastrar Cliente</h2></a>
-    <a href=""><h2>Ver Agendamentos</h2></a>
-    <a href="{{route('listar')}}"><h2>Listar Clientes</h2></a>
+    
+    <p>{{$customers}}</p>
+
 </body>
 </html>

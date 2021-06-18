@@ -19,7 +19,7 @@ class CreateCustomersTable extends Migration
             $table->foreign('customer_id')->references('id')->on('users')->nullable();
             $table->string('nome');
             $table->time('horario');
-            $table->float('valor', 2);
+            $table->tinyInteger('valor');
             $table->timestamps();
         });
     }

@@ -38,3 +38,5 @@ Route::get('/agendar', [UserController::class, 'schedule'])->middleware('auth')-
 
 Route::get('/criar',[ViewCustomerController::class, 'viewCustomer'])->middleware('auth')->name('customer');
 Route::post('/adicionar', [CustomerController::class, 'create'])->middleware('auth')->name('create');
+
+Route::get('/lista', [CustomerController::class, 'index'])->name('listar');

@@ -7,14 +7,6 @@ use Illuminate\Contracts\Auth\Authenticatable;
 
 class UserController extends Controller
 {
-    
-    static function userInstance($user)
-    {
-        
-
-        
-    }
-
 
     public function controlPanel()
     {
