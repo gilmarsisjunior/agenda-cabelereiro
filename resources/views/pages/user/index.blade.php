@@ -7,9 +7,13 @@
     <title>Document</title>
 </head>
 <body>
-    <a href=""><h1>Bem vindo, {{$name}}</h1></a>
-    <a href="{{route('agendate')}}"><h3>Agendar</h3></a>
-    <a href=""><h3>Recebidos</h3></a>
+    <h1>Bem vindo, {{$name}}</h1>
+    <h2>Renda Hoje: {{$sumToday}}</h2>
+    <h2>Renda total: {{$sumTotal}}</h2>
+    <a href="{{route('agendate')}}"><h3>Agenda</h3></a>
+    <a href="{{route('recived')}}"><h3>Histórico</h3></a>
+    
+    <a href="{{route('logout')}}"><h3>Logout</h3></a>
     
     @if ($isAdmin === 1)
     <a href=""><h3>Novo usuário</h3></a>

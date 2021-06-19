@@ -21,6 +21,7 @@ class CreateCustomersTable extends Migration
             $table->time('horario');
             $table->tinyInteger('valor');
             $table->string('data');
+            $table->boolean('completo')->default(0);
             $table->timestamps();
         });
     }

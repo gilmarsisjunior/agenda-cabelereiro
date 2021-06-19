@@ -14,17 +14,22 @@
             <td>Preço. C</td>
             <td>Hora</td>
         </tr>
+        @if ($customers->count())
         @foreach ($customers as $customer)
-            <tr>
-                <td>{{$customer->nome}}</td>
-                <td>{{$customer->valor}}</td>
-                <td>{{$customer->horario}}</td>
-                <td><a href="">Check</a></td>
-                <td><a href="">Edit</a></td>
-                <td><a href="{{route('delete', $customer->id)}}">Del</a></td>
-            </tr>
-        @endforeach
-    </table>
+        <tr>
+            <td>{{$customer->nome}}</td>
+            <td>{{$customer->valor}}</td>
+            <td>{{$customer->horario}}</td>
+            <td><a href="{{route('complete', $customer->id)}}">Complete</a></td>
+            <td><a href="{{route('delete', $customer->id)}}">Delete</a></td>
+        </tr>
+    @endforeach
 
+        @else
+            <p>Nenhum cliente agendado</p>
+        @endif
+        
+    </table>
+    <a href="{{route('home')}}"><h2>Início</h2></a>
 </body>
 </html>

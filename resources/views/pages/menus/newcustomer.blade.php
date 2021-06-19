@@ -14,7 +14,8 @@
         <input type="text" placeholder="Cliente" name="name">
         <input type="number" placeholder="Preço do corte" name="price">
         <input type="time" placeholder="Horário" name="time">
-        <button type="submit">Adicionar</button>
+        <button type="submit">Agendar</button>
+        <a href="{{route('home')}}"><h2>Início</h2></a>
     </form>
 
 </body>
