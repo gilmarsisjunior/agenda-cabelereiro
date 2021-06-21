@@ -12,14 +12,14 @@ class UserRegisterController extends Controller
 {
     public function createNewUser(Request $request)
     {
-      try {$query = User::create([
+      try {User::create([
         'name' => $request->name,
         'email'=> $request->email,
         'password'=> Hash::make($request->password),])->save();
         return 'Usuário cadastrado com sucesso!';
     }
      catch(Exception $e){
-         echo 'Erro : '. $e->getMessage();
+         return back()->withErrors(['credentials'=>'Falha ao cadastrar, verifique suas credenciais e tente novamente']);;
      }
     }
     

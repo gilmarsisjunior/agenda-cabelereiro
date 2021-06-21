@@ -7,6 +7,9 @@
     <title>Document</title>
 </head>
 <body>
+    @if ($errors->any())
+        <h4>{{$errors->first()}}</h4>
+    @endif
     <form action="/login" method="POST">
         @csrf
         <input type="email" placeholder="Insira deu email" name="email">

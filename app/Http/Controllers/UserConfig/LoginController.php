@@ -18,8 +18,8 @@ class LoginController extends Controller
        
         if(!Auth::attempt(['email'=>$request->email,'password'=>$request->password]))
         {
-            throw new Exception('Favor, confira suas credênciais');
-            return 0;
+            
+          return  back()->withInput(['email'])->withErrors(['credentials'=> 'Credenciais incorretas, tente novamente']);
         }
         return redirect('/home');
     }

@@ -9,6 +9,9 @@
 <body>
     <form action="/registro" method="POST">
         @csrf
+        @if ($errors->any())
+            <h4>{{$errors->first()}}</h4>
+        @endif
         <input type="text" placeholder="Nome e Sobrenome" name="name">
         <input type="email" placeholder="Insira deu email" name="email">
         <input type="password" placeholder="Senha" name="password">
